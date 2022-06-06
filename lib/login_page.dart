@@ -45,7 +45,6 @@ class _LoginPageState extends State<LoginPage> {
             borderRadius: BorderRadius.circular(10),
           ),
         ));
-
 // password filed
     final passwordField = TextFormField(
         obscureText: true,
