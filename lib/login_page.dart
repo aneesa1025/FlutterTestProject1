@@ -65,7 +65,6 @@ class _LoginPageState extends State<LoginPage> {
           if (!regexp.hasMatch(value)) {
             return ("Enter a valid Password, minimum 6 character");
           }
-          return null;
         },
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
@@ -85,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
-            // signIn(emailController.text, passwordController.text);
+            signIn(emailController.text, passwordController.text);
           },
           child: const Text(
             "Login",
@@ -170,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
 
             break;
           case "wrong-password":
-            errorMessage = "Your password is wrong.";
+            errorMessage = "Your password is incorrect.";
             break;
           case "user-not-found":
             errorMessage = "User with this email doesn't exist.";
@@ -188,7 +187,6 @@ class _LoginPageState extends State<LoginPage> {
             errorMessage = "An undefined Error happened.";
         }
         Fluttertoast.showToast(msg: errorMessage!);
-        // ignore: avoid_print
         print(error.code);
       }
     }
